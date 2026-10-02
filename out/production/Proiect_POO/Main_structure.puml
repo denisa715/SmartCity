@@ -1,0 +1,309 @@
+@startuml
+
+/' diagram meta data start
+config=StructureConfiguration;
+{
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": "",
+    "treatFinalFieldsAsMandatory": false
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": true,
+    "cutInterfaceStructures": true,
+    "cutDataStructures": true,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 3,
+    "backwardDepth": 3,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false, // root node is included
+    "useMethodCallsForStructureDiagram": "ForwardOnly" // ForwardOnly, BothDirections, No
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showClassGenericTypes": true,
+    "showMethods": true,
+    "showMethodParameterNames": true,
+    "showMethodParameterTypes": true,
+    "showMethodReturnType": true,
+    "showPackageLevels": 2,
+    "showDetailedClassStructure": true
+  },
+  "rootClass": "Main",
+  "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="TB"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_1521739371 { 
+   	label=LinieAutobuz
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   LinieAutobuz1521739371[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)LinieAutobuz</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   numarStatii: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   statieCurenta: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   timpTotalMinute: int [1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ descriere(): String</TD></TR>
+<TR><TD ALIGN="LEFT" >+ estimareSosire(): double</TD></TR>
+<TR><TD ALIGN="LEFT" >+ genereazaRaportScurt(): String</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_1796045224 { 
+   	label=ContainerDeseuri
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   ContainerDeseuri1796045224[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)ContainerDeseuri</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   capacitate: double [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   locatie: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   nivelUmplereProcent: double [1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ descriere(): String</TD></TR>
+<TR><TD ALIGN="LEFT" >+ genereazaRaportScurt(): String</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_2138838851 { 
+   	label=PunctConsum
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   PunctConsum2138838851[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)PunctConsum</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   tip: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   valoriConsumLunar: List&lt;Double&gt; [0..*]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ adaugaConsum(val: double)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ compUltimeleLuni(): String</TD></TR>
+<TR><TD ALIGN="LEFT" >+ consumNeobisnuit(): boolean</TD></TR>
+<TR><TD ALIGN="LEFT" >+ descriere(): String</TD></TR>
+<TR><TD ALIGN="LEFT" >+ genereazaRaportScurt(): String</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_2390489 { 
+   	label=Main
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   Main2390489[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Main</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ main(args: String[])</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_266318245 { 
+   	label=Intersectie
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   Intersectie266318245[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Intersectie</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   cod: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   numarBenzi: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   nume: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   timpRosu: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   timpVerde: int [1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ descriere(): String</TD></TR>
+<TR><TD ALIGN="LEFT" >+ efectueazaMentenanta()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ necesitaReparatii(): boolean</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_418165034 { 
+   	label=ElementUrban
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   ElementUrban418165034[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)ElementUrban</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   id: int [1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ descriere(): String</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_559396532 { 
+   	label=SmartCity
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   SmartCity559396532[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)SmartCity</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   containere: List&lt;ContainerDeseuri&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   elementeUrbane: List&lt;ElementUrban&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   intersectii: List&lt;Intersectie&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   liniiAutobuz: List&lt;LinieAutobuz&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   parcari: List&lt;Parcare&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   puncteConsum: List&lt;PunctConsum&gt; [0..*]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ adaugaContainer(c: ContainerDeseuri)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ adaugaElementUrban(e: ElementUrban)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ adaugaIntersectie(i: Intersectie)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ adaugaLinieAutobuz(l: LinieAutobuz)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ adaugaParcare(p: Parcare)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ adaugaPunctConsum(p: PunctConsum)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ afiseazaInformatii(lista: List&lt;T&gt;)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ afiseazaRaportGeneric(lista: List&lt;T&gt;)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ calculeazaDistantaRuta(distante: List&lt;Double&gt;): double</TD></TR>
+<TR><TD ALIGN="LEFT" >+ getElementUrban()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_871205650 { 
+   	label=Parcare
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   Parcare871205650[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)Parcare</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   capacitate: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   locuriOcupate: int [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   nume: String [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ compareTo(o: Parcare): int</TD></TR>
+<TR><TD ALIGN="LEFT" >+ descriere(): String</TD></TR>
+<TR><TD ALIGN="LEFT" >+ genereazaRaportScurt(): String</TD></TR>
+<TR><TD ALIGN="LEFT" >+ gradOcupare(): double</TD></TR>
+<TR><TD ALIGN="LEFT" >+ ieseMasina()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ intraMasina()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+'edges    
+ElementUrban418165034 -> ContainerDeseuri1796045224[arrowhead=none, arrowtail=empty, dir=both];
+ElementUrban418165034 -> Intersectie266318245[arrowhead=none, arrowtail=empty, dir=both];
+ElementUrban418165034 -> LinieAutobuz1521739371[arrowhead=none, arrowtail=empty, dir=both];
+ElementUrban418165034 -> Parcare871205650[arrowhead=none, arrowtail=empty, dir=both];
+ElementUrban418165034 -> PunctConsum2138838851[arrowhead=none, arrowtail=empty, dir=both];
+Main2390489 -> ContainerDeseuri1796045224[label="main() -> genereazaRaportScurt()"];
+Main2390489 -> LinieAutobuz1521739371[label="main() -> estimareSosire()"];
+SmartCity559396532 -> ContainerDeseuri1796045224[arrowhead=none];
+SmartCity559396532 -> ElementUrban418165034[label="elementeUrbane
+[0..*]"];
+SmartCity559396532 -> Intersectie266318245[label="intersectii
+[0..*]"];
+SmartCity559396532 -> LinieAutobuz1521739371[arrowhead=none];
+SmartCity559396532 -> Parcare871205650[arrowhead=none];
+SmartCity559396532 -> PunctConsum2138838851[arrowhead=none];
+    
+}
+@enduml
